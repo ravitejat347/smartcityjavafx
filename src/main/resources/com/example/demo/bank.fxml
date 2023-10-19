@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="bankView" prefHeight="450.0" prefWidth="530.0" spacing="10" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BankController">
+
+        <AnchorPane prefHeight="28.0" prefWidth="679.0">
+                <!-- The Back to Landing Page button, anchored to the top right corner -->
+                <Button onAction="#navigateBackToLandingPage" styleClass="button" text="Back to Landing Page" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" />
+   
+           <Label layoutX="14.0" layoutY="12.0" styleClass="label" text="Bank Information" />
+        </AnchorPane>
+
+        <!-- Display the ListView and TextField initially -->
+        <ListView fx:id="bankListView" onMouseClicked="#bankSelected" prefHeight="273.0" prefWidth="679.0" styleClass="list-view" />
+        <TextField fx:id="newBankNameField" promptText="Enter new bank name" styleClass="text-field" />
+
+        <!-- Hide the Delete and Update sections initially -->
+        <VBox fx:id="deleteAndUpdateContainer" visible="false">
+                <TextField fx:id="updateBankNameField" promptText="Enter updated bank name" styleClass="text-field" />
+                <Button onAction="#updateSelectedBank" styleClass="button" text="Update Bank">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin></Button>
+        </VBox>
+   <HBox prefHeight="40.0" prefWidth="679.0" spacing="30.0">
+      <children>
+      
+              <!-- Add a "Bank Accounts" button -->
+              <Button id="showBankAccountsButton" onAction="#showBankAccounts" prefHeight="35.0" prefWidth="150.0" styleClass="button" text="Bank Accounts">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font></Button>
+
+                 <!-- Display the Create Bank button -->
+              <Button id="createBankButton" onAction="#createNewBank" prefHeight="35.0" prefWidth="150.0" styleClass="button" text="Create Bank">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font></Button>
+                   <Button fx:id="deleteBankButton" onAction="#deleteSelectedBank" prefHeight="35.0" prefWidth="150.0" styleClass="button" text="Delete Bank">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font></Button>
+      </children>
+   </HBox>
+
+        <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+</VBox>

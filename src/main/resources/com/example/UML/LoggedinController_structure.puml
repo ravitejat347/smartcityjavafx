@@ -1,0 +1,166 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.demo.LoggedinController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_134842393 { 
+   	label=demo
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   DBConn813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DBConn</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ connectDB(): Connection</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LoggedinController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LoggedinController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   emailIdField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   passwordField: PasswordField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   submitButton: Button [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ goToSignUp(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ infoBox(infoMessage: String, headerText: String, title: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ login(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printSQLException(ex: SQLException)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showAlert(owner: Window, message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ validate(emailId: String, password: String): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+User813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)User</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   city: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   firstName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   lastName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phoneNumber: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roleID: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   state: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   streetAddress: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userID: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   zipcode: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ adminProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ emailProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ firstNameProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initializeUser(userID: int, firstName: String, lastName: String, streetAddress: String, city: String, zipcode: String, state: String, email: String, phoneNumber: String, roleID: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ lastNameProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ logOut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+LoggedinController813456180 -> DBConn813456180[label="validate() -> connectDB()"];
+LoggedinController813456180 -> User813456180[label="validate() -> initializeUser()"];
+    
+}
+@enduml

@@ -1,0 +1,160 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.demo.BankAccountController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_134842393 { 
+   	label=demo
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   BankAccountController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BankAccountController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   backToBankButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   backToLandingPageButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bankAccountData: ObservableList&lt;String&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bankAccountView: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bankListView: ListView&lt;String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bankNameLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   bankNames: ObservableList&lt;String&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bankSelectionComboBox: ComboBox&lt;String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   emailIdField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userRole: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createNewBankAccount()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ deleteSelectedBank()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ depositMoney()</TD></TR>
+<TR><TD ALIGN="LEFT" >- extractAccountNumberFromText(text: String): int</TD></TR>
+<TR><TD ALIGN="LEFT" >- generateRandomAccountNumber(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >- generateRandomRoutingNumber(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >- getAccountBalance(accountNumber: int): double</TD></TR>
+<TR><TD ALIGN="LEFT" >- getBankId(selectedBank: String): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getName(userId: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initData(selectedBank: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+<TR><TD ALIGN="LEFT" >- isAccountNumberUnique(accountNumber: int, bankId: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadBankAccounts()</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadBankNames()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ navigateBackToBank()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ navigateBackToLandingPage()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showBalance()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showErrorMessage(message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showSuccessMessage(message: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateAccountBalance(accountNumber: int, depositAmount: double): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateSelectedBank()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ withdrawMoney()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DBConn813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DBConn</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ connectDB(): Connection</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+
+    
+}
+@enduml

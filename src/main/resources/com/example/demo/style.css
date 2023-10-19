@@ -1,0 +1,176 @@
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #ffffff;
+}
+
+.tab-pane {
+    -fx-tab-min-width: 90px;
+    -fx-background-radius: 10px;
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1, 0, 0;
+}
+
+
+.tab-pane, .tab {
+    -fx-background-color:  linear-gradient(to bottom, #e3b256, #fac869);
+}
+.tab-pane{
+    -fx-background-color: #424fb3;
+}
+
+.tab:selected{
+    -fx-background-color: linear-gradient(to bottom, #5461cc,#424fb3);
+
+}
+.tab:selected .tab-label{
+    -fx-background-color: linear-gradient(to bottom, #5461cc,#424fb3);
+    -fx-text-fill: #d9dcde;
+}
+.tab, .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #1d262b;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-font-family: "YU Gothic";
+}
+
+.custom-dialog-header .header-panel {
+    -fx-font-size: 12px;
+    -fx-font-weight: bolder;
+    -fx-font-family: "YU Gothic";
+    -fx-text-fill:  #2a51ad;
+}
+
+.custom-dialog-header .content {
+    -fx-line-spacing: 10px;
+    -fx-font-family: "Utopia";
+}
+
+
+Button {
+    -fx-background-color: linear-gradient(to bottom, #e3b256, #fac869);
+    -fx-font-weight: bold;
+    -fx-text-fill: #545a5e;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+}
+Button:hover {
+    -fx-background-color: linear-gradient(to bottom, #fac869, #e3b256);
+    -fx-text-fill: #6b6e70;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+
+    -fx-scale-x: .95;
+    -fx-scale-y: .95;
+    -fx-scale-z: .95;
+}
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom,#5892d6,#357ed4);
+    -fx-font-size: 13px;
+    -fx-font-family: "YU Gothic";
+}
+.table-view .label {
+    -fx-text-fill: white;
+}
+
+/* Styling the table cells */
+.table-row-cell:odd {
+    -fx-background-color: #dae8f7;
+    -fx-text-fill: #333;
+}
+.table-row-cell:even {
+    -fx-background-color: #bfd7f5;
+    -fx-text-fill: #333;
+}
+
+/* Styling selected rows */
+.table-row-cell:selected {
+    -fx-background-color: #66aede;
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom,#5892d6,#357ed4);
+    -fx-font-size: 13px;
+    -fx-font-family: "YU Gothic";
+}
+.table-view .label {
+    -fx-text-fill: white;
+}
+
+/* Styling the table cells */
+.table-row-cell:odd {
+    -fx-background-color: #dae8f7;
+    -fx-text-fill: #333;
+}
+.table-row-cell:even {
+    -fx-background-color: #bfd7f5;
+    -fx-text-fill: #333;
+}
+
+/* Styling selected rows */
+.table-row-cell:selected {
+    -fx-background-color: #66aede;
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom,#5892d6,#357ed4);
+    -fx-font-size: 13px;
+    -fx-font-family: "YU Gothic";
+}
+.table-view .label {
+    -fx-text-fill: white;
+}
+
+/* Styling the table cells */
+.table-row-cell:odd {
+    -fx-background-color: #dae8f7;
+    -fx-text-fill: #333;
+}
+.table-row-cell:even {
+    -fx-background-color: #bfd7f5;
+    -fx-text-fill: #333;
+}
+
+/* Styling selected rows */
+.table-row-cell:selected {
+    -fx-background-color: #66aede;
+    -fx-text-fill: white;
+}
+
+.list-view .column-header {
+    -fx-background-color: linear-gradient(to bottom,#5892d6,#357ed4);
+    -fx-font-size: 13px;
+    -fx-font-family: "YU Gothic";
+}
+.list-view .label {
+    -fx-text-fill: white;
+}
+
+/* Styling the table cells */
+.list-row-cell:odd {
+    -fx-background-color: #dae8f7;
+    -fx-text-fill: #333;
+}
+.list-row-cell:even {
+    -fx-background-color: #bfd7f5;
+    -fx-text-fill: #333;
+}
+
+/* Styling selected rows */
+.list-row-cell:selected {
+    -fx-background-color: #66aede;
+    -fx-text-fill: white;
+}
+.hyperlink {
+    -fx-text-fill: blue; /* Change the text color to blue */
+    -fx-font-size: 12px; /* Change the font size to 14px */
+    -fx-underline: true; /* Underline the text */
+}
+
+/* Define a CSS style for the hovered state of all Hyperlinks */
+.hyperlink:hover {
+    -fx-text-fill: red; /* Change the text color to red when hovered */
+    -fx-cursor: hand; /* Change the cursor to a hand when hovered (optional) */
+}

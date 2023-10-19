@@ -1,0 +1,270 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.demo.Event",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_134842393 { 
+   	label=demo
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Event813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Event</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   eventDate: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventLocation: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventPrice: double [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+EventBooking813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EventBooking</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   account_id: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event_booking_id: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event_id: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event_price: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   user_id: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+EventBookingController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EventBookingController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   bookingDetails: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bookingTableView: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event1Details: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event2Details: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event3Details: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventBookingData: ObservableList&lt;EventBooking&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventDateColumn: TableColumn&lt;Event, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventLocationColumn: TableColumn&lt;Event, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventNameColumn: TableColumn&lt;Event, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventPriceColumn: TableColumn&lt;Event, Double&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventsTableView1: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventsTableView2: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventsTableView3: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mainContentView: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedItem: Event [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userRole: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- checkEventBooking(event: Event, userId: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- createBooking()</TD></TR>
+<TR><TD ALIGN="LEFT" >- createEventBooking(selectedEvent: Event, userId: int, accountId: int, eventPrice: double): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- deleteBooking()</TD></TR>
+<TR><TD ALIGN="LEFT" >- deleteBookingFromDatabase(eventName: String, eventDate: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAccountId(userId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >- getBalance(accountId: int): double</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleBookingSelection(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleEventSelection1(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadDataFromDatabase()</TD></TR>
+<TR><TD ALIGN="LEFT" >- mainContentView2()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showErrorDialog(title: String, content: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showInfoDialog(title: String, content: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateBalance(accountId: int, newBalance: double)</TD></TR>
+<TR><TD ALIGN="LEFT" >- viewBookings(selectedEvent1: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+EventsController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EventsController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   event1Details: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event1createEventButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event1deleteEventButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event2Details: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event2createEventButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event2deleteEventButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event3Details: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event3createEventButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   event3deleteEventButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventData1: ObservableList&lt;Event&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventData2: ObservableList&lt;Event&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventData3: ObservableList&lt;Event&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventsTableView1: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventsTableView2: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventsTableView3: TableView&lt;Event&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mainContentView: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   moreDetails1: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   moreDetails2: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   moreDetails3: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedEvent1: Event [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedEvent2: Event [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedEvent3: Event [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userRole: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createEvent()</TD></TR>
+<TR><TD ALIGN="LEFT" >- deleteEvent()</TD></TR>
+<TR><TD ALIGN="LEFT" >- deleteEventFromDatabase(eventIdToDelete: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- getRandomEventId(min: int, max: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleEventSelection1(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleEventSelection2(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleEventSelection3(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- insertEvent(event: Event): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- isEventIdUnique(eventId: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadDataFromDatabase()</TD></TR>
+<TR><TD ALIGN="LEFT" >- mainContentView()</TD></TR>
+<TR><TD ALIGN="LEFT" >- refreshTableView()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showErrorMessage(title: String, content: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showInfoMessage(title: String, content: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showMoreDetails1(selectedEvent1: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showMoreDetails2(selectedEvent2: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- showMoreDetails3(selectedEvent3: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+EventBooking813456180 -> Event813456180[arrowhead=none, arrowtail=empty, dir=both];
+EventBookingController813456180 -> Event813456180[label="bookingTableView
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventDateColumn
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventLocationColumn
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventNameColumn
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventPriceColumn
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventsTableView1
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventsTableView2
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="eventsTableView3
+[0..1]"];
+EventBookingController813456180 -> Event813456180[label="selectedItem
+[0..1]"];
+EventBookingController813456180 -> EventBooking813456180[label="eventBookingData
+[0..*]"];
+EventBookingController813456180 -> EventsController813456180[arrowhead=none, arrowtail=empty, dir=both];
+EventsController813456180 -> Event813456180[label="eventData1
+[0..*]"];
+EventsController813456180 -> Event813456180[label="eventData2
+[0..*]"];
+EventsController813456180 -> Event813456180[label="eventData3
+[0..*]"];
+EventsController813456180 -> Event813456180[label="eventsTableView1
+[0..1]"];
+EventsController813456180 -> Event813456180[label="eventsTableView2
+[0..1]"];
+EventsController813456180 -> Event813456180[label="eventsTableView3
+[0..1]"];
+EventsController813456180 -> Event813456180[label="selectedEvent1
+[0..1]"];
+EventsController813456180 -> Event813456180[label="selectedEvent2
+[0..1]"];
+EventsController813456180 -> Event813456180[label="selectedEvent3
+[0..1]"];
+    
+}
+@enduml

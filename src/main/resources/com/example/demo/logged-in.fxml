@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="535.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoggedinController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #ffffff, #e1e4e6);">
+         <children>
+            <Label layoutX="20.0" layoutY="131.0" prefHeight="18.0" prefWidth="68.0" text="Username" />
+            <Label layoutX="20.0" layoutY="185.0" text="Password" />
+            <TextField fx:id="emailIdField" layoutX="13.0" layoutY="155.0" prefHeight="26.0" prefWidth="170.0">
+               <font>
+                  <Font size="10.0" />
+               </font></TextField>
+            <PasswordField fx:id="passwordField" layoutX="13.0" layoutY="208.0" prefHeight="26.0" prefWidth="170.0">
+               <font>
+                  <Font size="10.0" />
+               </font></PasswordField>
+            <ImageView fitHeight="84.0" fitWidth="150.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/new-york-state-vector-logo.png" />
+               </image></ImageView>
+            <Button fx:id="submitButton" layoutX="74.0" layoutY="247.0" mnemonicParsing="false" onAction="#login" text="Login" />
+            <Button fx:id="signUp" contentDisplay="TEXT_ONLY" layoutX="68.0" layoutY="358.0" mnemonicParsing="false" onAction="#goToSignUp" text="Sign up" />
+         </children></AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="344.0" style="-fx-background-color: #424fb3;">
+         <children>
+            <ImageView fitHeight="373.0" fitWidth="321.0" layoutX="10.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/bg.jpg" />
+               </image>
+               <effect>
+                  <DropShadow offsetX="1.0" offsetY="1.0" />
+               </effect></ImageView>
+         </children></AnchorPane>
+   </children>
+</HBox>

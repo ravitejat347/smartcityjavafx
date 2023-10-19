@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<HBox prefHeight="661.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom, #ffffff, #e1e4e6);" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LandingPageController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="300.0">
+         <children>
+            <ImageView fitHeight="84.0" fitWidth="211.0" layoutX="74.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+
+                <image>
+                  <Image url="@../images/new-york-state-vector-logo.png" />
+               </image></ImageView>
+             
+            <Button fx:id="profileLink" layoutX="109.0" layoutY="571.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Profile" />
+            <Button fx:id="logOut" layoutX="108.0" layoutY="607.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="26.0" prefWidth="82.0" text="Log Out" />
+            <StackPane fx:id="userDataStackPane" layoutY="247.0" prefHeight="312.0" prefWidth="300.0" style="-fx-background-color: #87aede; -fx-background-radius: 20; -fx-opacity: 90%;" visible="false">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <effect>
+                  <DropShadow offsetX="2.0" offsetY="2.0">
+                     <input>
+                        <ColorAdjust />
+                     </input>
+                     <color>
+                        <Color red="0.13333334028720856" green="0.24705882370471954" blue="0.27843138575553894" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets bottom="230.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../images/Default.png" />
+                     </image>
+                     <effect>
+                        <DropShadow spread="0.29">
+                           <color>
+                              <Color red="0.25438597798347473" green="0.31652048230171204" blue="0.4736842215061188" />
+                           </color>
+                        </DropShadow>
+                     </effect></ImageView>
+               </children></StackPane>
+            <Pane fx:id="weatherPane" layoutX="21.0" layoutY="112.0" prefHeight="112.0" prefWidth="260.0" style="-fx-background-color: #87aede; -fx-background-radius: 20; -fx-opacity: 90%;">
+               <effect>
+                  <Glow level="0.49">
+                     <input>
+                        <DropShadow offsetX="2.0" offsetY="2.0">
+                           <color>
+                              <Color red="0.13333334028720856" green="0.24705882370471954" blue="0.27843138575553894" />
+                           </color>
+                        </DropShadow>
+                     </input>
+                  </Glow>
+               </effect></Pane>
+         </children>
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></AnchorPane>
+      <TabPane prefHeight="658.0" prefWidth="875.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Job Listing">
+                <content>
+                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="630.0" prefWidth="869.0" styleClass="anchor-pane">
+                        <children>
+                            <TableView fx:id="jobTableView" layoutX="10.0" layoutY="20.0" prefHeight="566.0" prefWidth="849.0">
+                                <columns>
+                                    <TableColumn fx:id="titleColumn" prefWidth="100.99999713897705" styleClass="TitleTabStyle" text="Title" />
+                                    <TableColumn fx:id="gradeColumn" prefWidth="59.0" text="Grade" />
+                                    <TableColumn fx:id="agencyColumn" text="Agency" />
+                                    <TableColumn fx:id="locationColumn" text="City" />
+                                    <TableColumn fx:id="applyColumn" prefWidth="125.0" text="Apply" />
+                                </columns>
+                            </TableView>
+                            <HBox fx:id="editJobRow" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="586.0" prefHeight="40.0" prefWidth="852.0" spacing="20.0" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Hotels">
+                <content>
+
+                    <AnchorPane prefHeight="180.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+                        <VBox layoutX="10.0" layoutY="25.0" prefHeight="595.0" prefWidth="850.0" spacing="10">
+                        <StackPane prefHeight="47.0" prefWidth="850.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="105.0" prefWidth="850.0" text="Manage Hotel Bookings" textFill="#ffffba">
+                                 <font>
+                                    <Font name="Bell MT Bold" size="36.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow offsetY="4.0">
+                                       <input>
+                                          <Lighting bumpInput="$null">
+                                             <light>
+                                                <Light.Distant>
+                                                   <color>
+                                                      <Color red="0.6352941393852234" green="0.8901960849761963" blue="0.9882352948188782" />
+                                                   </color>
+                                                </Light.Distant>
+                                             </light>
+                                          </Lighting>
+                                       </input>
+                                    </DropShadow>
+                                 </effect></Label>
+                           </children>
+                        </StackPane>
+                            <StackPane prefHeight="482.0" prefWidth="850.0">
+                                <ImageView fitHeight="437.0" fitWidth="748.0" pickOnBounds="true" preserveRatio="true"> <image> <Image url="@../images/Map-of-Albany.jpg" /> </image> </ImageView>
+                                <TableView fx:id="hotelTableView" onMouseClicked="#handleHotelSelection" prefHeight="300.0" prefWidth="750.0" visible="false">
+                                    <columns>
+                                        <TableColumn prefWidth="340.60001850128174" text="Hotel Name">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelName" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="305.39996337890625" text="Location">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelLocation" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="100.0" text="Price">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelPrice" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                       <!-- <TableColumn prefWidth="109.20001220703125" text="Room Number">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelRoomNumber" />
+                                            </cellValueFactory>
+                                        </TableColumn> -->
+                                        <TableColumn prefWidth="100.0" text="Availability">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelAvailability" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+
+                                <TableView fx:id="hotelBookingListView" onMouseClicked="#handleHotelBookingSelection" prefHeight="300.0" prefWidth="550.0" visible="false">
+                                    <columns>
+
+                                        <TableColumn prefWidth="200.0" text="Hotel Name">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelNamee" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="200.0" text="Location">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelLocationn" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="150.0" text="Check In Time">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="checkInTime" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="150.0" text="Check Out Time">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="checkOutTime" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="150.0" text="Hotel Total Cost">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="hotelTotalCost" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+                            </StackPane>
+                        <StackPane layoutY="30.0" prefHeight="119.0" prefWidth="779.0">
+                           <children>
+
+                                      <Pane>
+                                          <Button fx:id="editButton" onAction="#oneditButtonClicked" text="Edit Booking" visible="false" />
+                                          <Button fx:id="extendButton" layoutX="123.0" onAction="#extendButtonClicked" text="Extend Booking" visible="false" />
+                                          <Button fx:id="cancelButton" layoutX="263.0" onAction="#cancelButtonClicked" text="Cancel Booking" visible="false" />
+                                          <Button fx:id="bookHotels" layoutX="401.0" mnemonicParsing="false" onAction="#createBookingClicked" text="View Hotels" visible="false" />
+
+                                          <Button fx:id="bookButton" onAction="#onBookButtonClicked" text="Book Hotel" visible="false" />
+                                          <Button fx:id="manageHotelsBookings" layoutX="114.0" mnemonicParsing="false" onAction="#viewButtonClicked" text="View Bookings" visible="false" />
+                                          <Button fx:id="addHotel" layoutX="248.0" mnemonicParsing="false" onAction="#addHotelButtonClicked" text="Add Hotel" visible="false" />
+                                          <Button fx:id="deleteHotel" layoutX="356.0" mnemonicParsing="false" onAction="#deleteHotelButtonClicked" text="Delete Hotel" visible="false" />
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                                      </Pane>
+                                      <HBox fx:id="manageHotels" prefHeight="0.0" prefWidth="850.0" spacing="30">
+                                          <Button mnemonicParsing="false" onAction="#createBookingClicked" text="View Hotels" />
+                                          <Button mnemonicParsing="false" onAction="#viewButtonClicked" text="View Bookings" />
+                                          <Button fx:id="addDeleteHotels" mnemonicParsing="false" onAction="#createBookingClicked" text="Add or Delete Hotels" visible="false" />
+                                      </HBox>
+                           </children>
+                        </StackPane>
+
+
+
+
+                            <!-- <ListView fx:id="hotelBookingListView" prefHeight="300.0" prefWidth="550.0" visible="false" />-->
+                        </VBox>
+
+                    </AnchorPane>
+                </content>
+            </Tab>
+
+
+
+
+
+            <Tab text="Transport">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="665.0">
+                      <children>
+                          <Pane layoutX="488.0" layoutY="20.0" prefHeight="600.0" prefWidth="370.0" style="-fx-background-color: #3567c4; -fx-background-radius: 20px;">
+                              <children>
+                                  <Button layoutX="149.0" layoutY="520.0" mnemonicParsing="false" onAction="#purchaseTransportTicket" text="Purchase" />
+                                  <TableView fx:id="stopsTable" layoutX="9.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="352.0">
+                                    <columns>
+                                      <TableColumn fx:id="busStop" prefWidth="150.0" text="Stop" />
+                                      <TableColumn fx:id="busArrivalTime" prefWidth="100.0" resizable="false" text="Arrival" />
+                                        <TableColumn fx:id="busDepartureTime" minWidth="0.0" prefWidth="100.0" resizable="false" text="Departure" />
+                                    </columns>
+                                  </TableView>
+                              <Spinner fx:id="ticketSpinner" layoutX="144.0" layoutY="481.0" prefHeight="25.0" prefWidth="82.0" />
+                              <Label fx:id="busLabel" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="61.0" prefWidth="342.0" text="Select a Bus" textAlignment="CENTER" textFill="#e9f4a7" wrapText="true">
+                                 <font>
+                                    <Font name="Yu Gothic Regular" size="25.0" />
+                                 </font>
+                              </Label>
+                              </children></Pane>
+                        <TableView fx:id="transportTable" layoutX="10.0" layoutY="20.0" prefHeight="600.0">
+                          <columns>
+                            <TableColumn fx:id="busNo" prefWidth="53.200013160705566" text="Bus #" />
+                            <TableColumn fx:id="busName" prefWidth="126.79998779296875" text="Bus Name" />
+                              <TableColumn fx:id="routeDescription" prefWidth="282.3999786376953" text="Route Description" />
+                          </columns>
+                        </TableView>
+                      </children>
+
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="News">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <Pane fx:id="articlePane1" layoutX="10.0" layoutY="15.0" prefHeight="560.0" prefWidth="275.0" style="-fx-background-color: #3567c4; -fx-border-color: #2a51ad; -fx-border-width: 5; -fx-border-radius: 15; -fx-background-radius: 20px;">
+                           <children>
+                               <StackPane layoutX="10.0" layoutY="15.0" prefHeight="150.0" prefWidth="255.0">
+                                   <ImageView fx:id="newsImage1" fitHeight="150.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" styleClass="articleImage" />
+                               </StackPane>
+                              <DialogPane fx:id="descriptionPane1" layoutX="10.0" layoutY="180.0" prefHeight="370.0" prefWidth="255.0" style="-fx-background-radius: 20px; -fx-border-color: #4b8ad6; -fx-border-width: 3px; -fx-border-radius: 15; -fx-background-color: #87aede;" styleClass="custom-dialog-header">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </DialogPane>
+                              <Hyperlink fx:id="newsLink1" layoutX="30.0" layoutY="516.0" text="Go to Source" textFill="#7e6666" underline="true" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="articlePane2" layoutX="298.0" layoutY="15.0" prefHeight="560.0" prefWidth="275.0" style="-fx-background-color: #3567c4; -fx-border-color: #2a51ad; -fx-border-width: 5; -fx-border-radius: 15; -fx-background-radius: 20px;">
+                           <children>
+                               <StackPane layoutX="10.0" layoutY="394.0" prefHeight="150.0" prefWidth="255.0">
+                                   <ImageView fx:id="newsImage2" fitHeight="150.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" styleClass="articleImage" />
+                               </StackPane>
+                              <DialogPane fx:id="descriptionPane2" layoutX="10.0" layoutY="15.0" prefHeight="370.0" prefWidth="255.0" style="-fx-background-radius: 20px; -fx-border-color: #4b8ad6; -fx-border-width: 3px; -fx-border-radius: 15; -fx-background-color: #87aede;" styleClass="custom-dialog-header">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </DialogPane>
+                              <Hyperlink fx:id="newsLink2" layoutX="29.0" layoutY="351.0" text="Go to Source" textFill="#7e6666" underline="true" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="articlePane3" layoutX="585.0" layoutY="15.0" prefHeight="560.0" prefWidth="275.0" style="-fx-background-color: #3567c4; -fx-border-color: #2a51ad; -fx-border-width: 5; -fx-border-radius: 15; -fx-background-radius: 20px;">
+                           <children>
+                               <StackPane layoutX="10.0" layoutY="15.0" prefHeight="150.0" prefWidth="255.0">
+                                   <ImageView fx:id="newsImage3" fitHeight="150.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" styleClass="articleImage" />
+                               </StackPane>
+                              <DialogPane fx:id="descriptionPane3" layoutX="10.0" layoutY="180.0" prefHeight="370.0" prefWidth="255.0" style="-fx-background-radius: 20px; -fx-border-color: #4b8ad6; -fx-border-width: 3px; -fx-border-radius: 15; -fx-background-color: #87aede;" styleClass="custom-dialog-header">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </DialogPane>
+                              <Hyperlink fx:id="newsLink3" layoutX="30.0" layoutY="517.0" text="Go to Source" textFill="#7e6666" underline="true" />
+                           </children>
+                        </Pane>
+                         <Button fx:id="previousButton" layoutX="10.0" layoutY="585.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="&lt;&lt;">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Button>
+                         <Button fx:id="nextButton" layoutX="805.0" layoutY="584.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="&gt;&gt;">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font></Button>
+                     </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Night Life">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                        <children>
+                            <Pane fx:id="nightLifePane1" layoutX="10.0" layoutY="15.0" prefHeight="560.0" prefWidth="275.0" style="-fx-background-color: #3567c4; -fx-border-color: #2a51ad; -fx-border-width: 5; -fx-border-radius: 15; -fx-background-radius: 20px;">
+                                <children>
+                              <StackPane layoutX="10.0" layoutY="15.0" prefHeight="150.0" prefWidth="255.0">
+                                 <children>
+                                          <ImageView fx:id="nightLifeImage1" fitHeight="150.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" styleClass="articleImage" />
+                                 </children>
+                              </StackPane>
+                                    <DialogPane fx:id="nightLifedescriptionPane1" layoutX="10.0" layoutY="180.0" prefHeight="370.0" prefWidth="255.0" style="-fx-background-radius: 20px; -fx-border-color: #4b8ad6; -fx-border-width: 3px; -fx-border-radius: 15; -fx-background-color: #87aede;" styleClass="custom-dialog-header">
+                                        <padding>
+                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                        </padding>
+                                    </DialogPane>
+                                    <Hyperlink fx:id="nightLifeLink1" layoutX="30.0" layoutY="516.0" text="Go to Source" textFill="#7e6666" underline="true" />
+                                </children>
+                            </Pane>
+                            <Pane fx:id="nightLifePane2" layoutX="298.0" layoutY="15.0" prefHeight="560.0" prefWidth="275.0" style="-fx-background-color: #3567c4; -fx-border-color: #2a51ad; -fx-border-width: 5; -fx-border-radius: 15; -fx-background-radius: 20px;">
+                                <children>
+                              <StackPane layoutX="10.0" layoutY="395.0" prefHeight="150.0" prefWidth="255.0">
+                                 <children>
+                                          <ImageView fx:id="nightLifeImage2" fitHeight="150.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" styleClass="articleImage" />
+                                 </children></StackPane>
+                                    <DialogPane fx:id="nightLifedescriptionPane2" layoutX="10.0" layoutY="15.0" prefHeight="370.0" prefWidth="255.0" style="-fx-background-radius: 20px; -fx-border-color: #4b8ad6; -fx-border-width: 3px; -fx-border-radius: 15; -fx-background-color: #87aede;" styleClass="custom-dialog-header">
+                                        <padding>
+                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                        </padding>
+                                    </DialogPane>
+                                    <Hyperlink fx:id="nightLifeLink2" layoutX="29.0" layoutY="351.0" text="Go to Source" textFill="#7e6666" underline="true" />
+                                </children>
+                            </Pane>
+                            <Pane fx:id="nightLifePane3" layoutX="585.0" layoutY="15.0" prefHeight="560.0" prefWidth="275.0" style="-fx-background-color: #3567c4; -fx-border-color: #2a51ad; -fx-border-width: 5; -fx-border-radius: 15; -fx-background-radius: 20px;">
+                                <children>
+                              <StackPane layoutX="10.0" layoutY="15.0" prefHeight="150.0" prefWidth="255.0">
+                                 <children>
+                                          <ImageView fx:id="nightLifeImage3" fitHeight="150.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" styleClass="articleImage" />
+                                 </children>
+                              </StackPane>
+                                    <DialogPane fx:id="nightLifedescriptionPane3" layoutX="10.0" layoutY="180.0" prefHeight="370.0" prefWidth="255.0" style="-fx-background-radius: 20px; -fx-border-color: #4b8ad6; -fx-border-width: 3px; -fx-border-radius: 15; -fx-background-color: #87aede;" styleClass="custom-dialog-header">
+                                        <padding>
+                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                        </padding>
+                                    </DialogPane>
+                                    <Hyperlink fx:id="nightLifeLink3" layoutX="30.0" layoutY="517.0" text="Go to Source" textFill="#7e6666" underline="true" />
+                                </children>
+                            </Pane>
+                            <Button fx:id="previousButtonn" layoutX="10.0" layoutY="585.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="&lt;&lt;">
+                                <font>
+                                    <Font name="System Bold" size="15.0" />
+                                </font></Button>
+                            <Button fx:id="nextButtonn" layoutX="805.0" layoutY="584.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="54.0" text="&gt;&gt;">
+                                <font>
+                                    <Font name="System Bold" size="15.0" />
+                                </font></Button>
+                        <Button fx:id="addNightLifeInfo" layoutX="352.0" layoutY="585.0" mnemonicParsing="false" onAction="#addNightLife" prefHeight="28.0" prefWidth="70.0" text="Add" visible="false" />
+                        <Button fx:id="deleteNightLifeInfo" layoutX="448.0" layoutY="585.0" mnemonicParsing="false" onAction="#deleteNightLife" prefHeight="28.0" prefWidth="70.0" text="Delete" visible="false" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Events" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+                <content>
+                    <AnchorPane styleClass="anchor-pane">
+                        <children>
+                            <StackPane layoutX="59.0" layoutY="39.0" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #3567c4; -fx-background-radius: 20; -fx-border-color: #2a51ad; -fx-border-radius: 15; -fx-border-width: 5px;">
+                                <!-- First TableView for Event 1 -->
+                                <VBox fx:id="event1Details" layoutX="10.0" layoutY="20.0" spacing="10" visible="false">
+                                    <TableView fx:id="eventsTableView1" onMouseClicked="#handleEventSelection1" prefHeight="460.0" prefWidth="900.0" style="-fx-background-color: #87aede;">
+                                        <columns>
+                                            <TableColumn prefWidth="300.0" text="Event Name">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventName" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventDate" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="200.0" text="Location">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventLocation" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Price">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventPrice" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                                    <HBox spacing="20">
+                                        <Button onAction="#mainContentView" text="Go Back" />
+                                        <Button onAction="#createBooking" text="Create Booking" />
+                                        <Button onAction="#viewBookings" text="View Bookings" />
+                                        <Button fx:id="event1createEventButton" onAction="#createEvent" text="Create Event" />
+                                        <Button fx:id="event1deleteEventButton" onAction="#deleteEvent" text="Delete Event" />
+                                    </HBox>
+                                </VBox>
+
+                                <!-- Second TableView for Event 2 -->
+                                <VBox fx:id="event2Details" layoutX="10.0" layoutY="20.0" spacing="10" visible="false">
+                                    <TableView fx:id="eventsTableView2" onMouseClicked="#handleEventSelection2" prefHeight="460.0" prefWidth="900.0" style="-fx-background-color: #87aede;">
+                                        <columns>
+                                            <TableColumn prefWidth="300.0" text="Event Name">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventName" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventDate" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="200.0" text="Location">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventLocation" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Price">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventPrice" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                                    <HBox spacing="20">
+                                        <Button onAction="#mainContentView" text="Go Back" />
+                                        <Button onAction="#createBooking" text="Create Booking" />
+                                        <Button onAction="#viewBookings" text="View Bookings" />
+                                        <Button fx:id="event2createEventButton" onAction="#createEvent" text="Create Event" />
+                                        <Button fx:id="event2deleteEventButton" onAction="#deleteEvent" text="Delete Event" />
+                                    </HBox>
+                                </VBox>
+
+                                <!-- Third TableView for Event 3 -->
+                                <VBox fx:id="event3Details" layoutX="10.0" layoutY="20.0" spacing="10" visible="false">
+                                    <TableView fx:id="eventsTableView3" onMouseClicked="#handleEventSelection3" prefHeight="460.0" prefWidth="900.0" style="-fx-background-color: #87aede;">
+                                        <columns>
+                                            <TableColumn prefWidth="300.0" text="Event Name">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventName" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventDate" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="200.0" text="Location">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventLocation" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Price">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventPrice" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                                    <HBox spacing="20">
+                                        <Button onAction="#mainContentView" text="Go Back" />
+                                        <Button onAction="#createBooking" text="Create Booking" />
+                                        <Button onAction="#viewBookings" text="View Bookings" />
+                                        <Button fx:id="event3createEventButton" onAction="#createEvent" text="Create Event" />
+                                        <Button fx:id="event3deleteEventButton" onAction="#deleteEvent" text="Delete Event" />
+                                    </HBox>
+                                </VBox>
+                                <VBox fx:id="bookingDetails" layoutX="10.0" layoutY="20.0" spacing="10" visible="false">
+                                    <TableView fx:id="bookingTableView" onMouseClicked="#handleBookingSelection" prefHeight="460.0" prefWidth="702.0" style="-fx-background-color: #87aede;">
+                                        <columns>
+                                            <TableColumn prefWidth="300.0" text="Event Name">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventName" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Date">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventDate" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="200.0" text="Location">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventLocation" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn prefWidth="100.0" text="Cost">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="eventPrice" />
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                                    <HBox spacing="20">
+                                        <Button onAction="#mainContentView2" text="Go Back" />
+                                        <Button onAction="#deleteBooking" text="Delete Booking" />
+                                    </HBox>
+                                </VBox>
+                                <!-- Description and Images -->
+                                <VBox fx:id="mainContentView" alignment="CENTER" spacing="20.0">
+                                <!-- Description -->
+                                <Label styleClass="description-label" text="Events Calendar" textFill="#ffffb8">
+                                 <font>
+                                    <Font name="Bell MT" size="30.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow offsetY="2.0">
+                                       <input>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant>
+                                                   <color>
+                                                      <Color red="0.6352941393852234" green="0.8901960849761963" blue="0.9882352948188782" />
+                                                   </color>
+                                                </Light.Distant>
+                                             </light>
+                                          </Lighting>
+                                       </input>
+                                       <color>
+                                          <Color red="0.031578946858644485" green="0.031228071078658104" blue="0.031228071078658104" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect></Label>
+                                <Label styleClass="description-label" textFill="WHITE">From annual festivals and parades, to award-winning performances, to museum exhibits, to holiday festivities,</Label>
+                                <Label styleClass="description-label" textFill="WHITE">there is always something exciting happening in Albany!</Label>
+                                <Label styleClass="description-label" textFill="WHITE">Browse our Events Calendar to find ongoing and special events occurring in Albany County.</Label>
+                                <Label styleClass="description-label" textFill="WHITE">Have an event you would like to see on our Calendar?</Label>
+                                <!-- Images in a Horizontal Layout -->
+                                <HBox spacing="50">
+                                <!-- First Image with More Details Button -->
+                                <VBox spacing="10">
+                                <ImageView fitHeight="150.0" fitWidth="200.0">
+                                    <image>
+                                        <Image url="@../images/events1.jpeg" />
+                                    </image>
+                                </ImageView>
+                                    <Label style="-fx-text-fill: #fffd70;"> ANNUAL EVENTS AND FESTIVALS </Label>
+                                    <Label style="-fx-text-fill: #fffd70;"> Discover Albany's annual events and festivals!</Label>
+                                    <Button onAction="#showMoreDetails1" styleClass="more-button" text="More Details" />
+                                </VBox>
+
+                                <!-- Second Image with More Details Button -->
+                                <VBox spacing="10">
+                                    <ImageView fitHeight="150.0" fitWidth="200.0">
+                                        <image>
+                                            <Image url="@../images/events2.jpeg" />
+                                        </image>
+                                    </ImageView>
+                                    <Label style="-fx-text-fill: #fffd70;">LIVE MUSIC </Label>
+                                    <Label style="-fx-text-fill: #fffd70;">Find great live music in Albany County.</Label>
+                                    <Button onAction="#showMoreDetails2" styleClass="more-button" text="More Details" />
+                                </VBox>
+                                    <!-- Third Image with More Details Button -->
+                                    <VBox spacing="10">
+                                        <ImageView fitHeight="150.0" fitWidth="200.0">
+                                            <image>
+                                                <Image url="@../images/events3.jpeg" />
+                                            </image>
+                                        </ImageView>
+                                        <Label style="-fx-text-fill: #fffd70;">TEAM SPORTS</Label>
+                                        <Label style="-fx-text-fill: #fffd70;">Cheer on Albany's hometown teams.</Label>
+                                        <Button onAction="#showMoreDetails3" styleClass="more-button" text="More Details" />
+                                    </VBox>
+                                </HBox>
+                                    <VBox>
+                                        <Button onAction="#viewBookings" text="View Bookings" />
+                                    </VBox>
+                                </VBox>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                            </StackPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="City Map">
+                <Pane>
+                  <children>
+                     <WebView fx:id="webviewMap" layoutX="9.0" layoutY="14.0" prefHeight="602.0" prefWidth="850.0" />
+
+                  </children>
+                </Pane>
+            </Tab>
+        </tabs>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </TabPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</HBox>

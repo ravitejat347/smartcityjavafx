@@ -1,0 +1,431 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.demo.NightLifeController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_134842393 { 
+   	label=demo
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Bus813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Bus</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   longName: StringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   routeID: StringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   routeMainId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   shortName: StringProperty [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DBConn813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DBConn</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ connectDB(): Connection</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HotelBooking813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HotelBooking</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   accountId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   checkInDate: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   checkOutDate: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   emailId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   emailIdd: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   hotelBookId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   hotelId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   uid: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addHotel(hotelNamee: String, hotelLocationn: String, hotelPricee: String, roomNoo: int, hotelAvailabilityy: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ cancelBooking(hotelBookId: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ createBooking(hotelId: int, uid: int, accountId: int, checkInDate: String, checkOutDate: String, totalCost: double): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ deleteHotel(hotelId: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ editBooking(newCheckIn: String, newCheckOut: String, hotelBookId: int, totalCost: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ extendBooking(newCheckIn: String, newCheckOut: String, hotelBookId: int, totalCost: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAccountBalance(accountNumber: int): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAccountId(userId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getBookingDetails(userId: int): ResultSet</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getHotelAvalibility(hotelId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getHotelBookingCost(bookingId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getHotelBookingLocation(hotelId: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getHotelBookingName(hotelId: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getHotelId(hotelBookingId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getHotelPrice(hotelId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getRoleDetails(emailId: String): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getUserdetails(emailId: String): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateAccountBalance(accountNumber: int, amount: double): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updatedAvailability(hotelId: int, availibilityy: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Job813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Job</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   applyButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jobAgency: StringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jobGrade: StringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jobId: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jobLocation: StringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jobTitle: StringProperty [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ ApplyButtonProperty(): Button</TD></TR>
+<TR><TD ALIGN="LEFT" >+ JobAgencyProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ JobGradeProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ JobLocationProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ titleProperty(): StringProperty</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+JobListing813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)JobListing</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addJob(title: String, grade: String, agency: String, city: String): Job</TD></TR>
+<TR><TD ALIGN="LEFT" >+ applyJob(jobID: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ editJob(oldJob: Job, newJob: Job)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAllJobs(k: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getJob(job: Job)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ postJob(job: Job)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ removeJob(job: Job)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LandingPageController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LandingPageController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   adminButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   agencyColumn: TableColumn&lt;Job, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   applyColumn: TableColumn&lt;Job, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   busArrivalTime: TableColumn&lt;Stop, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   busDepartureTime: TableColumn&lt;Stop, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   busLabel: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   busName: TableColumn&lt;Bus, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   busNo: TableColumn&lt;Bus, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   busStop: TableColumn&lt;Stop, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentJob: Job [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentNewsIndex: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descriptionPane1: DialogPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descriptionPane2: DialogPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   descriptionPane3: DialogPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   editJobRow: HBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   editProfileButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   executorService: ExecutorService [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   flag: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   gradeColumn: TableColumn&lt;Job, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isProfilePaneOpen: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jobTableView: TableView&lt;Job&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   locationColumn: TableColumn&lt;Job, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newCard: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsImage1: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsImage2: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsImage3: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsLink1: Hyperlink [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsLink2: Hyperlink [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsLink3: Hyperlink [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   newsPerPage: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nextButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   previousButton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profileLink: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   routeDescription: TableColumn&lt;Bus, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   stopsTable: TableView&lt;Stop&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   ticketSpinner: Spinner&lt;Integer&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   titleColumn: TableColumn&lt;Job, String&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   transport: VBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   transportTable: TableView&lt;Bus&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userDataStackPane: StackPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   weatherPane: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   webviewMap: WebView [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ LogOut(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >- createUserProfilePane(): Pane</TD></TR>
+<TR><TD ALIGN="LEFT" >- displayWeather()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getDescriptionPaneForIndex(index: int): DialogPane</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getImagePaneForIndex(index: int): ImageView</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNewsLinkForIndex(index: int): Hyperlink</TD></TR>
+<TR><TD ALIGN="LEFT" >+ goToEditProfile()</TD></TR>
+<TR><TD ALIGN="LEFT" >- handleProfileButtonClick(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize(location: URL, resources: ResourceBundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >- jobEditTransition()</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadAdminFXML()</TD></TR>
+<TR><TD ALIGN="LEFT" >- loadBankFXML()</TD></TR>
+<TR><TD ALIGN="LEFT" >- modJobListing(title: String, grade: String, agency: String, city: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- onProfileLinkClicked()</TD></TR>
+<TR><TD ALIGN="LEFT" >- populateNewsPanes(newsItems: ObservableList&lt;News&gt;, startIndex: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printSQLException(ex: SQLException)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ purchaseTransportTicket()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showAlert(alertType: AlertType, owner: Window, title: String, message: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MapController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MapController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- showErrorDialog(errorMessage: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ showMap(webview: WebView)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+NightLifeController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)NightLifeController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   addNightLifeInfo: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currentNightLifeIndex: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   deleteNightLifeInfo: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   description: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageUrl: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   moreInfoUrl: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   namee: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nextButtonn: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifeImage1: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifeImage2: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifeImage3: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifeLink1: Hyperlink [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifeLink2: Hyperlink [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifeLink3: Hyperlink [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifedescriptionPane1: DialogPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifedescriptionPane2: DialogPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nightLifedescriptionPane3: DialogPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   previousButtonn: Button [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- addNightLife()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addNightLifeDialogContent(): DialogPane</TD></TR>
+<TR><TD ALIGN="LEFT" >- deleteNightLife()</TD></TR>
+<TR><TD ALIGN="LEFT" >- deleteNightLifeDialogContent(): DialogPane</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNightLifeDescriptionPaneForIndex(index: int): DialogPane</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNightLifeImagePaneForIndex(index: int): ImageView</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNightLifeLinkForIndex(index: int): Hyperlink</TD></TR>
+<TR><TD ALIGN="LEFT" >- populateNightLifePanes(nightLifeItems: ObservableList&lt;NightLife&gt;, startIndex: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ show()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Stop813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Stop</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   arrivalTime: SimpleStringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   departureTime: SimpleStringProperty [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   stopName: SimpleStringProperty [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ arrivalTimeProperty(): SimpleStringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ departureTimeProperty(): SimpleStringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stopNameProperty(): SimpleStringProperty</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TransportController813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TransportController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getAccountBalance(accountNumber: int): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAccountId(userId: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getStops(routeId: String): ArrayList&lt;Stop&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ purchaseTicket(qty: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateAccountBalance(accountNumber: int, amount: double)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+User813456180[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)User</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   city: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   email: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   firstName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   lastName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phoneNumber: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roleID: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   state: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   streetAddress: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userID: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   zipcode: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ adminProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ emailProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ firstNameProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initializeUser(userID: int, firstName: String, lastName: String, streetAddress: String, city: String, zipcode: String, state: String, email: String, phoneNumber: String, roleID: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ lastNameProperty(): StringProperty</TD></TR>
+<TR><TD ALIGN="LEFT" >+ logOut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+LandingPageController813456180 -> Bus813456180[label="busName
+[0..1]"];
+LandingPageController813456180 -> Bus813456180[label="busNo
+[0..1]"];
+LandingPageController813456180 -> Bus813456180[label="routeDescription
+[0..1]"];
+LandingPageController813456180 -> Bus813456180[label="transportTable
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="agencyColumn
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="applyColumn
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="currentJob
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="gradeColumn
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="jobTableView
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="locationColumn
+[0..1]"];
+LandingPageController813456180 -> Job813456180[label="titleColumn
+[0..1]"];
+LandingPageController813456180 -> MapController813456180[label="initialize() -> showMap()"];
+LandingPageController813456180 -> Stop813456180[label="busArrivalTime
+[0..1]"];
+LandingPageController813456180 -> Stop813456180[label="busDepartureTime
+[0..1]"];
+LandingPageController813456180 -> Stop813456180[label="busStop
+[0..1]"];
+LandingPageController813456180 -> Stop813456180[label="stopsTable
+[0..1]"];
+LandingPageController813456180 -> User813456180[label="LogOut() -> logOut()"];
+NightLifeController813456180 -> HotelBooking813456180[label="show() -> getRoleDetails()"];
+NightLifeController813456180 -> LandingPageController813456180[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

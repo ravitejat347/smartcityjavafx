@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="bankAccountView" prefHeight="450.0" prefWidth="700.0" spacing="20" stylesheets="@bankaccount.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.BankAccountController">
+
+    <styleClass>bank-account-container</styleClass> <!-- Apply CSS styling for customization -->
+
+    <children>
+        <!-- Header Section -->
+        <HBox alignment="TOP_RIGHT" spacing="20">
+            <Button fx:id="backToLandingPageButton" onAction="#navigateBackToLandingPage" styleClass="header-button" text="Back to Landing Page" />
+        </HBox>
+        <!-- Bank Selection Section -->
+        <VBox alignment="CENTER" spacing="10.0">
+            <Label styleClass="header-label" text="Bank Account Information" />
+            <!-- <Label text="Select a Bank" styleClass="section-label"/> -->
+            <ComboBox fx:id="bankSelectionComboBox" prefHeight="30.0" prefWidth="200.0" promptText="Select a Bank" styleClass="combo-box" />
+        </VBox>
+
+        <!-- Bank Account List Section -->
+        <VBox alignment="CENTER" spacing="10">
+            <Label styleClass="section-label" text="Available Bank Accounts" />
+            <ListView fx:id="bankListView" prefHeight="211.0" prefWidth="490.0" styleClass="list-view" />
+        </VBox>
+        <!-- Bank Account Actions Section -->
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="createBankAccountButton" onAction="#createNewBankAccount" styleClass="action-button" text="Create Account" />
+            <Button fx:id="deleteBankButton" onAction="#deleteSelectedBank" styleClass="action-button" text="Delete Account" />
+            <Button fx:id="depositButton" onAction="#depositMoney" styleClass="action-button" text="Deposit" />
+            <Button fx:id="withdrawButton" onAction="#withdrawMoney" styleClass="action-button" text="Withdraw" />
+            <Button fx:id="showBalanceButton" onAction="#showBalance" styleClass="action-button" text="Show Balance" />
+        </HBox>
+    </children>
+</VBox>
